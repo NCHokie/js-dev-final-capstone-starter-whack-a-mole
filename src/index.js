@@ -92,8 +92,13 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  // TODO: Write your code here
-  
+	if (time > 0) {
+		timeoutId = showUp();
+		return timeoutId;
+	} else {
+		gameStopped = stopGame();
+		return gameStopped;
+	}
 }
 
 /**
@@ -250,8 +255,8 @@ function stopGame(){
 *
 */
 function startGame(){
-  //setDuration(10);
-  //showUp();
+  setDuration(10);
+  showUp();
   return "game started";
 }
 
